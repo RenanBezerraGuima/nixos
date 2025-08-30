@@ -1,6 +1,8 @@
 { config, pkgs, lib, ...}:
 
 {
+	imports = [ ./i3.nix ];
+
 	home.username = "renanbg";
 	home.homeDirectory = "/home/renanbg";
 

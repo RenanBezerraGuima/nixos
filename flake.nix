@@ -17,10 +17,10 @@
 
   outputs = inputs@{ nixpkgs, home-manager, stylix, ... }: {
       nixosConfigurations = {
-      	renanbg = nixpkgs.lib.nixosSystem {
+	desktop = nixpkgs.lib.nixosSystem {
       		 system = "x86_64-linux";
 		      modules = [
-		        ./configuration.nix
+		        ./hosts/desktop/default.nix
 
 				stylix.nixosModules.stylix
 				
@@ -28,10 +28,25 @@
 		        {
 		        	home-manager.useGlobalPkgs = true;
        	            home-manager.useUserPackages = true;
-       	            home-manager.users.renanbg = import ./home.nix;
+	            home-manager.users.renanbg = import ./home/default.nix;
 		        }
 		      ];
       	};
+        laptop = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/laptop/default.nix
+
+            stylix.nixosModules.stylix
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.renanbg = import ./home/default.nix;
+            }
+          ];
+        };
       };
     };
 }
