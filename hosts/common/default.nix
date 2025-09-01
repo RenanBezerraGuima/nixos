@@ -67,13 +67,9 @@
 	firefox
 	fastfetch
 
-	betterlockscreen
 	feh
-	scrot
 	arandr
 	ranger
-
-	xclip
 
 	curl
 	wget
