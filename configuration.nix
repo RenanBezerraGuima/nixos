@@ -136,20 +136,10 @@
 
 	services.xserver = {
 		enable = true;
-		
-		windowManager.i3 = {
-		enable = true;
-			extraPackages = with pkgs; [
-				i3blocks
-				rofi
-				picom
-			];
-		};
 		displayManager.lightdm.enable = true;
 	};
 
 	services.displayManager = {
-		defaultSession = "none+i3";
 		autoLogin = {
 			enable = false;
 			user = "renanbg";	
