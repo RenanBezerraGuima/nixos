@@ -33,7 +33,7 @@ in
         
         # Window management
         "${mod}+q" = "kill";
-        "${mod}+f" = "fullscreen toggle";
+        "${mod}+F11" = "fullscreen toggle";
         "${mod}+Shift+space" = "floating toggle";
         "${mod}+space" = "focus mode_toggle";
         
