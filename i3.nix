@@ -6,6 +6,7 @@ in
 
 {
   # Enable i3 window manager through Home Manager
+  xsession.enable = true;
   xsession.windowManager.i3 = {
     enable = true;
     package = pkgs.i3;

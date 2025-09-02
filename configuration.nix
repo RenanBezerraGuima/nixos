@@ -136,15 +136,27 @@
 
 	services.xserver = {
 		enable = true;
+		libinput.enable = true;
 		displayManager.lightdm.enable = true;
+		# Auto login
+		# displayManager.lightdm.autoLogin = {enable = true; user = "renanbg"; };
+
+		displayManager.session = [
+			{
+				manage = "desktop";
+				name = "xsession";
+				start = ''exec $HOME/.xsession'';
+			}	
+		];
+		displayManager.defaultSession = "xsession";
 	};
 
-	services.displayManager = {
-		autoLogin = {
-			enable = false;
-			user = "renanbg";	
-		};
-	};
+	# services.displayManager = {
+	# 	autoLogin = {
+	# 		enable = false;
+	# 		user = "renanbg";	
+	# 	};
+	# };
 
 	virtualisation.virtualbox.guest.enable = true;
 

@@ -28,7 +28,14 @@
 		        {
 		        	home-manager.useGlobalPkgs = true;
        	            home-manager.useUserPackages = true;
-       	            home-manager.users.renanbg = import ./home.nix;
+       	            home-manager.users.renanbg = {
+       	            	imports = [ 
+       	            		./home.nix
+       	            		./i3.nix
+      	            	];
+       	            };
+
+       	            home-manager.backupFileExtension = "hm-backup";
 		        }
 		      ];
       	};
