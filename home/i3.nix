@@ -214,6 +214,11 @@ in
           always = false;
           notification = false;
         }
+        {
+        	command = "megasync";
+        	always = false;
+        	notification = false; 
+        }
       ];
     };
   };
@@ -239,5 +244,15 @@ in
     # Utilities your i3 config uses
     xorg.xbacklight       # Brightness control
     pulseaudio       # Audio control (pactl)
+
+    feh
+    scrot
+    arandr
+
+    betterlockscreen
+    xclip
+
+    protonvpn-gui
+    megasync
   ];
 }

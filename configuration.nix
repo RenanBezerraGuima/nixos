@@ -10,6 +10,9 @@
       ./hardware-configuration.nix
     ];
 
+  # VM
+  virtualisation.virtualbox.guest.enable = true;
+
   # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -85,26 +88,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-	micro
-	firefox
-	fastfetch
-
-	betterlockscreen
-	feh
-	scrot
-	arandr
-	ranger
-
-	xclip
-
-	curl
-	wget
-	git
-	tree
-	unzip
-	zip
+  
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -153,15 +137,6 @@
 		libinput.enable = true;
 		displayManager.defaultSession = "xsession";
 	};
-	
-	# services.displayManager = {
-	# 	autoLogin = {
-	# 		enable = false;
-	# 		user = "renanbg";	
-	# 	};
-	# };
-
-	virtualisation.virtualbox.guest.enable = true;
 
 	fonts.packages = with pkgs; [
 		nerd-fonts.fira-code	
@@ -194,6 +169,4 @@
 	        };
 		};
 	};
-
-
 }

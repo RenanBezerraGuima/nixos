@@ -2,11 +2,18 @@
 
 {
 	home.packages = with pkgs; [
-			protonvpn-gui
+			xfce.thunar
+
 			bat
 			devbox
 			gitui
+			micro
+
+			unzip
+			zip
 			
-			xfce.thunar
+			wget
+			curl
+			firefox
 		];
 }
