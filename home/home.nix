@@ -5,6 +5,8 @@
 	home.homeDirectory = "/home/renanbg";
 
 	imports = [
+		./i3.nix
+		
 		./fastfetch.nix
 		./packages.nix
 		./starship.nix
@@ -16,11 +18,6 @@
 	];
 
 	stylix.enable = true;
-
-	programs.wezterm = {
-		enable = true;
-		enableZshIntegration = true;	
-	};
 	
 	home.stateVersion = "25.05";
 }

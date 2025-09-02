@@ -30,8 +30,7 @@
        	            home-manager.useUserPackages = true;
        	            home-manager.users.renanbg = {
        	            	imports = [ 
-       	            		./home.nix
-       	            		./i3.nix
+       	            		./home/home.nix
       	            	];
        	            };
 
