@@ -127,5 +127,7 @@
 		};
 	};
 
+	stylix.targets.librewolf.profileNames = [ "default" ];
+	
 	home.stateVersion = "25.05";
 }

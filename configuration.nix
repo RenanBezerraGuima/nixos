@@ -136,7 +136,6 @@
 
 	services.xserver = {
 		enable = true;
-		libinput.enable = true;
 		displayManager.lightdm.enable = true;
 		# Auto login
 		# displayManager.lightdm.autoLogin = {enable = true; user = "renanbg"; };
@@ -148,9 +147,13 @@
 				start = ''exec $HOME/.xsession'';
 			}	
 		];
-		displayManager.defaultSession = "xsession";
 	};
 
+	services = {
+		libinput.enable = true;
+		displayManager.defaultSession = "xsession";
+	};
+	
 	# services.displayManager = {
 	# 	autoLogin = {
 	# 		enable = false;
