@@ -12,7 +12,7 @@
 		unzip
 		zip
 
-		okular
+		kdePackages.okular
 		wget
 		curl
 		firefox
