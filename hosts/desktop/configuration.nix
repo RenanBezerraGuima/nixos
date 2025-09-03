@@ -31,7 +31,7 @@
     dates = "weekly";
   };
 
-  networking.hostName = "renanbg"; # Define your hostname.
+  networking.hostName = "desktop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -144,7 +144,7 @@
 	stylix = {
 		enable = true;
 		polarity = "dark";
-		image = ./wallpapers/Wallpaper.jpg;
+		image = ../../wallpapers/WallpaperDark.jpg;
 
 		base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-dark.yaml";
 		#base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-light.yaml";
