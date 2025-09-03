@@ -1,10 +1,9 @@
 { config, pkgs, lib, ...}:
 
 {
-	programs.librewolf = {
-		enable = true;
-				
-	};
+	home.packages = with pkgs; [
+		librewolf	
+	];
 
 	stylix.targets.librewolf.profileNames = [ "default" ];
 }

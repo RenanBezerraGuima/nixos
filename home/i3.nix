@@ -219,6 +219,11 @@ in
         	always = false;
         	notification = false; 
         }
+        {
+        	command = "pasystray";
+        	always= false;
+        	notification = false;
+        }
       ];
     };
   };
@@ -243,8 +248,11 @@ in
    
     # Utilities your i3 config uses
     xorg.xbacklight       # Brightness control
-    pulseaudio       # Audio control (pactl)
-
+	# Audio tray
+    pasystray
+    pavucontrol
+    pamixer
+	
     feh
     scrot
     arandr

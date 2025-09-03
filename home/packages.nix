@@ -2,18 +2,19 @@
 
 {
 	home.packages = with pkgs; [
-			xfce.thunar
+		xfce.thunar
 
-			bat
-			devbox
-			gitui
-			micro
+		bat
+		devbox
+		gitui
+		micro
 
-			unzip
-			zip
-			
-			wget
-			curl
-			firefox
-		];
+		unzip
+		zip
+
+		okular
+		wget
+		curl
+		firefox
+	];
 }

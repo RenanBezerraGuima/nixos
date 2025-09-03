@@ -72,7 +72,7 @@
   users.users.renanbg = {
     isNormalUser = true;
     description = "Renan Bezerra Guimarães";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio"];
     packages = with pkgs; [];
 
     shell = pkgs.zsh;
@@ -88,7 +88,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -169,4 +168,19 @@
 	        };
 		};
 	};
+
+	# Audio with pipewire
+	services.pulseaudio.enable = false;
+	security.rtkit.enable = true;
+	services.pipewire = {
+	  enable = true;
+	  alsa.enable = true;
+	  alsa.support32Bit = true;
+	  pulse.enable = true;
+	  wireplumber.enable = true;
+	};
+	
+	# Important for ALSA device state persistence
+	hardware.alsa.enablePersistence = true;
+	
 }
