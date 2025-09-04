@@ -11,10 +11,6 @@
 		shellAliases = {
 			cd = "z";
 			ls = "eza";
-			lg = "lazygit";	
-
-			deploy-desktop = "nixos-rebuild switch --flake .#desktop";
-			deploy-laptop = "nixos-rebuild switch --flake .#laptop";
 		};
   	};
 }

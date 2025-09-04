@@ -2,5 +2,5 @@
 { config, pkgs, ... }:
 
 {
-	services.xserver.displayManager.lightdm.autoLogin = {enable = true; user = "renanbg"; };
+	services.displayManager.autoLogin = {enable = true; user = "renanbg"; };
 }
