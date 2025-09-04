@@ -15,29 +15,23 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, stylix, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, stylix, ... }:
+    let
+      inherit (nixpkgs) lib;
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
+    in
+    {
       nixosConfigurations = {
-      	renanbg = nixpkgs.lib.nixosSystem {
-      		 system = "x86_64-linux";
-		      modules = [
-		        ./hosts/desktop/configuration.nix
+        desktop = lib.nixosSystem {
+          inherit system specialArgs;
+          modules = [ ./hosts/desktop ];
+        };
 
-				stylix.nixosModules.stylix
-				
-		        home-manager.nixosModules.home-manager
-		        {
-		        	home-manager.useGlobalPkgs = true;
-       	            home-manager.useUserPackages = true;
-       	            home-manager.users.renanbg = {
-       	            	imports = [ 
-       	            		./home/home.nix
-      	            	];
-       	            };
-
-       	            home-manager.backupFileExtension = "hm-backup";
-		        }
-		      ];
-      	};
+        laptop = lib.nixosSystem {
+          inherit system specialArgs;
+          modules = [ ./hosts/laptop ];
+        };
       };
     };
 }
