@@ -2,12 +2,6 @@
 { config, pkgs, ... }:
 
 {
-	imports = [
-		# Dark or Light Mode
-		./darkMode.nix
-		# ./lightMode.nix	
-	];
-	
 	fonts.packages = with pkgs; [
 			nerd-fonts.fira-code	
 	];

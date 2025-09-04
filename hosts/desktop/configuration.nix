@@ -8,14 +8,15 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./virtualization.nix
-      ./boot.nix
-      ./storage.nix
-      ./networking.nix
-      ./localization.nix
-      ./styling.nix
-      ./audio.nix
-      ./X11.nix
+      ../modules/virtualization.nix
+      ../modules/boot.nix
+      ../modules/storage.nix
+      ../modules/networking.nix
+      ../modules/localization.nix
+      ../modules/styling.nix
+      ../modules/darkMode.nix
+      ../modules/audio.nix
+      ../modules/X11.nix
     ];
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
