@@ -6,11 +6,10 @@
 		acpi	
 	];
 
-	programs.i3blocks.blocks = [
-		''
-		[battery]
-		command=acpi | cut -d, -f2
-		interval=30
-		''
-	] ++ config.programs.i3blocks.blocks;
+	programs.i3blocks.bars.default.battery = {
+			command = "acpi | cut -d, -f2";
+			interval = 30;
+			separator = true;
+			separator_block_width = 15;
+		};
 }

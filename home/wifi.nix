@@ -1,17 +1,14 @@
 { config, pkgs, ...}:
 
 {
-	# Wifi applet
-	home.packages = with pkgs; [
-		network-manager-applet	
-	];
+	services.network-manager-applet.enable = true;
 
 	# Wifi Tray
 	xsession.windowManager.i3.config.startup = [
 		{
-			command = 		"nm-applet";
-			always = 		false;
-			notification = 	false;
+			command = "nm-applet";
+			always = false;
+			notification = false;
 		}	
 	];
 }

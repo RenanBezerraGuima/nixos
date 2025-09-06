@@ -4,7 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../modules/boot.nix
+      ../modules/bootLaptop.nix
       ../modules/storage.nix
       ../modules/networking.nix
       ../modules/localization.nix
@@ -17,7 +17,7 @@
     ];
 
   networking.hostName = "laptop";
-  networking.wireless.enable = true;
+  # networking.wireless.enable = true;
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

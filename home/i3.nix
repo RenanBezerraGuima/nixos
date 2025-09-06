@@ -228,16 +228,15 @@ in
     };
   };
   
-  # i3blocks configuration file
-  home.file.".config/i3blocks/i3blocks.conf".text = ''
-    # Global properties
-    separator=true
-    separator_block_width=15
-    
-    [time]
-    command=date '+%d/%m/%Y %H:%M'
-    interval=60
-  '';
+  programs.i3blocks = {
+    enable = true;
+    bars.default.time = {
+      command = "date '+%d/%m/%Y %H:%M'";
+      interval = 60;
+      separator = true;
+      separator_block_width = 15;
+    };
+  };
   
   # Additional packages needed for i3 functionality
   home.packages = with pkgs; [
