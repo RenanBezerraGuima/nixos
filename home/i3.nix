@@ -187,6 +187,8 @@ in
     };
   };
 
+  programs.i3blocks.enable = true;
+
   services.picom = {
     enable = true;
     backend = "glx";
@@ -202,14 +204,9 @@ in
     };
   };
   
-  programs.i3blocks = {
-    enable = true;
-  };
-  
   # Additional packages needed for i3 functionality
   home.packages = with pkgs; [
     # i3 ecosystem
-    i3blocks         # Status bar (already in system config, but good to have)
     rofi             # Application launcher (already in system config)
     picom            # Compositor (already in system config)
    
