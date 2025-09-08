@@ -148,7 +148,8 @@ in
       bars = [
         {
           position = "top";
-          statusCommand = "${pkgs.i3blocks}/bin/i3blocks";
+          #statusCommand = "${pkgs.i3blocks}/bin/i3blocks";
+          statusCommand = "i3blocks";
           workspaceButtons = true;
           workspaceNumbers = true;
 
@@ -187,8 +188,6 @@ in
     };
   };
 
-  programs.i3blocks.enable = true;
-
   services.picom = {
     enable = true;
     backend = "glx";
@@ -209,6 +208,7 @@ in
     # i3 ecosystem
     rofi             # Application launcher (already in system config)
     picom            # Compositor (already in system config)
+	i3blocks
    
     brightnessctl
 	# Audio
