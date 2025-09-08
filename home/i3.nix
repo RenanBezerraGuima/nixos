@@ -94,13 +94,13 @@ in
         "${mod}+r" = "mode resize";
         
         # Media keys
-        "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%";
-        "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%";
-        "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle";
+        "XF86AudioRaiseVolume" = "exec --no-startup-id pamixer -i 5";
+        "XF86AudioLowerVolume" = "exec --no-startup-id pamixer -d 5";
+        "XF86AudioMute" = "exec --no-startup-id pamixer -t";
         
         # Brightness controls
-        "XF86MonBrightnessUp" = "exec xbacklight -inc 20";
-        "XF86MonBrightnessDown" = "exec xbacklight -dec 20";
+        "XF86MonBrightnessUp" = "exec --no-startup-id brightnessctl set 5%+";
+        "XF86MonBrightnessDown" = "exec --no-startup-id brightnessctl set 5%-";
         
         # Screenshots
         "Print" = "exec scrot -s -e 'xclip -selection clipboard -t image/png -i $f && rm $f'";
@@ -148,7 +148,7 @@ in
       bars = [
         {
           position = "top";
-          statusCommand = "i3blocks -c ${config.home.homeDirectory}/.config/i3blocks/i3blocks.conf";
+          statusCommand = "${pkgs.i3blocks}/bin/i3blocks";
           workspaceButtons = true;
           workspaceNumbers = true;
           
@@ -156,53 +156,11 @@ in
             names = [ "Fira Code Nerd Font Mono" ];
             size = 10.0;
           };
-          
-          extraConfig = ''
-            i3bar_command i3bar --transparency
-            workspace_min_width 24
-          '';
-          
-          colors = {
-            background = "#00000088";
-            statusline = "#ffffff";
-            separator = "#666666";
-            
-            focusedWorkspace = {
-              border = "#523d6480";
-              background = "#523d6480";
-              text = "#ffffff";
-            };
-            activeWorkspace = {
-              border = "#333333";
-              background = "#5f676a88";
-              text = "#ffffff";
-            };
-            inactiveWorkspace = {
-              border = "#333333";
-              background = "#22222288";
-              text = "#888888";
-            };
-            urgentWorkspace = {
-              border = "#2f343a";
-              background = "#900000cc";
-              text = "#ffffff";
-            };
-            bindingMode = {
-              border = "#2f343a";
-              background = "#900000cc";
-              text = "#ffffff";
-            };
-          };
         }
       ];
       
       # Startup applications
       startup = [
-        {
-          command = "picom -b --backend glx";
-          always = false;
-          notification = false;
-        }
         {
           command = "betterlockscreen -w dim";
           always = false;
@@ -226,14 +184,30 @@ in
       ];
     };
   };
+
+  services.picom = {
+    enable = true;
+    backend = "glx";
+    vSync = true;
+    settings = {
+      wintypes = {
+        dock = {
+          shadow = false;
+          opacity = 0.5;
+        };
+      };
+    };
+  };
   
   programs.i3blocks = {
     enable = true;
-    bars.default.time = {
-      command = "date '+%d/%m/%Y %H:%M'";
-      interval = 60;
-      separator = true;
-      separator_block_width = 15;
+    bars.default = {
+    	time = {
+			command = "date '+%d/%m/%Y %H:%M'";
+ 		    interval = 60;
+ 		    separator = true;
+ 		    separator_block_width = 15;
+	    };	
     };
   };
   
@@ -244,9 +218,8 @@ in
     rofi             # Application launcher (already in system config)
     picom            # Compositor (already in system config)
    
-    # Utilities your i3 config uses
-    xorg.xbacklight       # Brightness control
-	# Audio tray
+    brightnessctl
+	# Audio
     pasystray
     pavucontrol
     pamixer
