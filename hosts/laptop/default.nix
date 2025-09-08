@@ -13,7 +13,7 @@
       home-manager.users.renanbg = {
         imports = [
           ../../home/home.nix
-          ../../home/battery.nix
+          ../../home/timeAndBattery.nix
           ../../home/wifi.nix
         ];
       };

@@ -151,6 +151,8 @@ in
           statusCommand = "${pkgs.i3blocks}/bin/i3blocks";
           workspaceButtons = true;
           workspaceNumbers = true;
+
+		  colors.background = "#00000080";
           
           fonts = {
             names = [ "Fira Code Nerd Font Mono" ];
@@ -190,6 +192,7 @@ in
     backend = "glx";
     vSync = true;
     settings = {
+      "opacity-rule" = [ "100:class_g = 'Polybar'" "100:class_g = 'slop'" ];
       wintypes = {
         dock = {
           shadow = false;
@@ -201,14 +204,6 @@ in
   
   programs.i3blocks = {
     enable = true;
-    bars.default = {
-    	time = {
-			command = "date '+%d/%m/%Y %H:%M'";
- 		    interval = 60;
- 		    separator = true;
- 		    separator_block_width = 15;
-	    };	
-    };
   };
   
   # Additional packages needed for i3 functionality
