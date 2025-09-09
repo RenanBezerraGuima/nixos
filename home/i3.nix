@@ -31,6 +31,7 @@ in
         "${mod}+w" = "exec librewolf";
         "${mod}+d" = "exec rofi -show run";
         "${mod}+o" = "exec obsidian";
+        "${mod}+f" = "exec thunar";
         
         # Window management
         "${mod}+q" = "kill";
@@ -39,23 +40,23 @@ in
         "${mod}+space" = "focus mode_toggle";
         
         # Focus controls
-        "${mod}+j" = "focus left";
-        "${mod}+k" = "focus down";
-        "${mod}+l" = "focus up";
-        "${mod}+semicolon" = "focus right";
+        "${mod}+h" = "focus left";
+        "${mod}+j" = "focus down";
+        "${mod}+k" = "focus up";
+        "${mod}+l" = "focus right";
         "${mod}+Left" = "focus left";
         "${mod}+Down" = "focus down";
         "${mod}+Up" = "focus up";
         "${mod}+Right" = "focus right";
         
         # Move windows
-        "${mod}+Shift+j" = "move left";
-        "${mod}+Shift+k" = "move down";
-        "${mod}+Shift+l" = "move up";
-        "${mod}+Shift+semicolon" = "move right";
+        "${mod}+Shift+h" = "move left";
+        "${mod}+Shift+j" = "move down";
+        "${mod}+Shift+k" = "move up";
+        "${mod}+Shift+l" = "move right";
         
         # Split containers
-        "${mod}+h" = "split h";
+        "${mod}+y" = "split h";
         "${mod}+v" = "split v";
         
         # Layout modes
@@ -109,6 +110,10 @@ in
         
         # Lock screen
         "${mod}+Shift+x" = "exec betterlockscreen -l dim";
+
+        # Scratchpad
+        "${mod}+Shift+minus" = "move scratchpad";
+        "${mod}+minus" = "scratchpad show";
       };
       
       # Resize mode configuration

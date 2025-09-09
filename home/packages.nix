@@ -6,6 +6,8 @@
 
 		bat
 		devbox
+		direnv
+		
 		gitui
 		micro
 

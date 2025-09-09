@@ -34,6 +34,18 @@
 		};
 	
 		programs.helix = {
-			enable = true;	
+			enable = true;
+
+			languages = {
+				langue-server.ruby-lsp = {
+					command = "${pkgs.ruby-lsp}/bin/ruby-lsp";		
+				};
+			};
+
+			settings = {
+				editor = {
+					continue-comments = false;	
+				};	
+			};
 		};
 }
