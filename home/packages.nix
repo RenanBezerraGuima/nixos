@@ -15,6 +15,8 @@
 		kdePackages.okular
 		wget
 		curl
-		firefox
+
+		obsidian
+		qalculate-qt
 	];
 }

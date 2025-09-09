@@ -24,4 +24,8 @@
 	  libinput.enable = true;
 	  displayManager.defaultSession = "xsession";
 	};
+
+	security.pam.services.i3lock = {
+		enable = true;	
+	};
 }

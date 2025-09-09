@@ -30,6 +30,7 @@ in
         "${mod}+Return" = "exec wezterm";
         "${mod}+w" = "exec librewolf";
         "${mod}+d" = "exec rofi -show run";
+        "${mod}+o" = "exec obsidian";
         
         # Window management
         "${mod}+q" = "kill";
