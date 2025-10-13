@@ -4,9 +4,7 @@
 	home.packages = with pkgs; [
 		xfce.thunar
 
-		bat
 		devbox
-		direnv
 		
 		gitui
 		micro
@@ -20,5 +18,11 @@
 
 		obsidian
 		qalculate-qt
+
+		libreoffice
+
+		vscode
+
+		obs-studio
 	];
 }

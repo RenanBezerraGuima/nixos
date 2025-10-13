@@ -6,7 +6,9 @@
 			settings = {
 				theme_background = false;
 			};
-		};
+	};
+
+	programs.bat.enable = true;
 	
 		programs.eza = {
 			enable = true;
