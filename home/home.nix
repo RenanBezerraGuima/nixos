@@ -15,6 +15,7 @@
 		./git.nix
 		./browser.nix
 		./terminal.nix
+		./distrobox.nix
 	];
 
 	stylix.enable = true;

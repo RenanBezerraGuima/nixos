@@ -22,7 +22,5 @@
 		libreoffice
 
 		vscode
-
-		obs-studio
 	];
 }
