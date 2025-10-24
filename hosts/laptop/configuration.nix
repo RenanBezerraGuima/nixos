@@ -14,6 +14,7 @@
       ../modules/X11.nix
       ../modules/tlp.nix
       ../modules/autoLogin.nix
+      ../modules/virtualization.nix
     ];
 
   networking.hostName = "laptop";
